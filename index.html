@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FS15-go | Fun_Studio15</title>
+
+    <link rel="icon" type="image/jpeg" href="Logo_LowRes.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: 100svh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        header img {
+            display: block;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .go-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 42px;
+            padding: 40px 20px;
+        }
+
+        .go-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+
+            padding: 17px 32px;
+
+            font-family: 'Fira Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+
+            color: #f7f7f7;
+            background: #252525;
+
+            border: 1px solid #414141;
+            border-radius: 10px;
+
+            transition: all 0.2s ease;
+        }
+
+        .go-button:hover {
+            background: #303030;
+            border-color: #666666;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .go-button:active {
+            transform: translateY(-1px);
+        }
+
+        .go-button .arrow {
+            font-size: 19px;
+            transition: transform 0.2s ease;
+        }
+
+        .go-button:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .socials a {
+            width: 76px;
+            height: 76px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #252525;
+            border: 1px solid #414141;
+            border-radius: 12px;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .socials a:hover {
+            transform: scale(1.09);
+            background: #303030;
+            border-color: #666666;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .socials a:active {
+            transform: scale(1.03);
+        }
+
+        .socials img {
+            width: 34px;
+            height: 34px;
+            object-fit: contain;
+        }
+
+        .go-button:focus-visible,
+        .socials a:focus-visible {
+            outline: 2px solid #9b9b9b;
+            outline-offset: 4px;
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .socials {
+                gap: 12px;
+            }
+
+            .socials a {
+                width: 66px;
+                height: 66px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="/">
+            <img src="Logo_LowRes.jpg" alt="Fun_Studio15" width="40">
+        </a>
+
+        <h1>Fun_Studio15</h1>
+    </header>
+
+    <main class="go-main">
+
+        <a
+            class="go-button"
+            href="https://funstudio15.github.io/fun-studio15/"
+        >
+            Visit Main Website
+            <span class="arrow">→</span>
+        </a>
+
+        <div class="socials">
+
+            <a href="https://www.youtube.com/@Fun_Studio15"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="YouTube">
+                <img src="Youtube.svg" alt="YouTube">
+            </a>
+
+            <a href="https://fun-studio15.itch.io"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="itch.io">
+                <img src="Itchio.svg" alt="itch.io">
+            </a>
+
+            <a href="https://soundcloud.com/funstudio15"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="SoundCloud">
+                <img src="Soundcloud.svg" alt="SoundCloud">
+            </a>
+
+            <a href="https://discord.gg/avQMpce3vv"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Discord">
+                <img src="Discord.svg" alt="Discord">
+            </a>
+
+            <a href="https://www.tiktok.com/@fun_studio15"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="TikTok">
+                <img src="TikTok.svg" alt="TikTok">
+            </a>
+
+            <a href="https://www.reddit.com/user/Fun_Studio15/"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Reddit">
+                <img src="Reddit.svg" alt="Reddit">
+            </a>
+
+        </div>
+
+    </main>
+
+    <footer>
+        © <span id="year"></span> Fun_Studio15
+        <span class="footer-divider">·</span>
+        <a href="privacy.html">Privacy Policy</a>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
