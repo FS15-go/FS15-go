@@ -1,4 +1,5 @@
 <!--this is a copy of the oficcial site https://funstudio15.github.io/fun-studio15/-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
 
     <title>FS15-go | Fun_Studio15</title>
 
-    <link rel="icon" type="image/jpeg" href="Logo_LowRes.jpg">
+    <link rel="icon" type="image/jpeg" href="./Logo_LowRes.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,33 +29,93 @@
             flex-direction: column;
         }
 
-        header {
+        /* HEADER */
+
+        .site-header {
+            width: min(760px, calc(100% - 40px));
+            margin: 12px auto 0;
+
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: flex-start !important;
+            align-items: center !important;
+            gap: 14px !important;
+
+            padding: 0 0 14px !important;
+            border: none !important;
+        }
+
+        .site-brand {
+            flex: 0 0 40px;
+            width: 40px;
+            height: 40px;
+
             display: flex;
             align-items: center;
-            gap: 14px;
-            width: calc(100% - 48px);
-            max-width: 1100px;
-            margin: 0 auto;
+            justify-content: center;
         }
 
-        header img {
+        .site-brand img {
             display: block;
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
         }
 
-        header h1 {
-            margin: 0;
+        .logo-fallback {
+            width: 40px;
+            height: 40px;
+            border: 1px solid currentColor;
+            border-radius: 8px;
+
+            align-items: center;
+            justify-content: center;
+
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
         }
+
+        .logo-fallback[hidden] {
+            display: none;
+        }
+
+        .site-title {
+            margin: 0 !important;
+            padding: 0 !important;
+
+            font-family: 'Space Grotesk', sans-serif !important;
+            font-size: clamp(23px, 3vw, 32px) !important;
+            line-height: 1.15 !important;
+            font-weight: 700 !important;
+            text-align: left !important;
+        }
+
+        .header-divider {
+            width: min(760px, calc(100% - 40px));
+            height: 1px;
+            margin: 0 auto;
+
+            background: rgba(255, 255, 255, 0.13);
+        }
+
+        /* MAIN CONTENT */
 
         .go-main {
             flex: 1;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
             gap: 42px;
             padding: 40px 20px;
+
             transform: translateY(25px);
         }
+
+        /* MAIN WEBSITE BUTTON */
 
         .go-button {
             display: inline-flex;
@@ -97,6 +158,8 @@
         .go-button:hover .arrow {
             transform: translateX(4px);
         }
+
+        /* SOCIAL LINKS */
 
         .socials {
             display: flex;
@@ -142,15 +205,21 @@
             object-fit: contain;
         }
 
+        /* ACCESSIBILITY */
+
         .go-button:focus-visible,
         .socials a:focus-visible {
             outline: 2px solid #9b9b9b;
             outline-offset: 4px;
         }
 
+        /* FOOTER */
+
         footer {
             text-align: center;
         }
+
+        /* MOBILE */
 
         @media (max-width: 480px) {
             .socials {
@@ -171,13 +240,27 @@
 
 <body>
 
-    <header>
-        <a href="/">
-            <img src="Logo_LowRes.jpg" alt="Fun_Studio15" width="40">
+    <header class="site-header">
+
+        <a class="site-brand"
+           href="https://funstudio15.github.io/fun-studio15/"
+           aria-label="Fun_Studio15 Main Website">
+
+            <img
+                src="./Logo_LowRes.jpg"
+                alt=""
+                onerror="this.hidden=true; this.nextElementSibling.hidden=false;"
+            >
+
+            <span class="logo-fallback" hidden>FS</span>
+
         </a>
 
-        <h1>Fun_Studio15</h1>
+        <h1 class="site-title">Fun_Studio15</h1>
+
     </header>
+
+    <div class="header-divider"></div>
 
     <main class="go-main">
 
